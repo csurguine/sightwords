@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83A0A52A218FAEB000B69148 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A0A529218FAEB000B69148 /* SettingsViewController.swift */; };
 		83D17E64218F503E0053F600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D17E63218F503E0053F600 /* AppDelegate.swift */; };
 		83D17E66218F503E0053F600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D17E65218F503E0053F600 /* ViewController.swift */; };
 		83D17E69218F503E0053F600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D17E67218F503E0053F600 /* Main.storyboard */; };
 		83D17E6B218F503F0053F600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D17E6A218F503F0053F600 /* Assets.xcassets */; };
 		83D17E6E218F503F0053F600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D17E6C218F503F0053F600 /* LaunchScreen.storyboard */; };
+		83DE3938218FC191002B43AA /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE3937218FC191002B43AA /* WordListViewController.swift */; };
+		83DE393A218FD6FE002B43AA /* CustomWordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE3939218FD6FE002B43AA /* CustomWordListViewController.swift */; };
+		83DE393C218FE747002B43AA /* CustomWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE393B218FE747002B43AA /* CustomWordViewController.swift */; };
+		83DE3942219CFCF1002B43AA /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE3941219CFCF1002B43AA /* ModeSelectViewController.swift */; };
+		83DE3946219E4AD0002B43AA /* FlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE3945219E4AD0002B43AA /* FlashcardsViewController.swift */; };
+		83DE3948219F415D002B43AA /* SightWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE3947219F415D002B43AA /* SightWord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83A0A529218FAEB000B69148 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		83D17E60218F503E0053F600 /* SightWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D17E63218F503E0053F600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83D17E65218F503E0053F600 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,12 @@
 		83D17E6A218F503F0053F600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83D17E6D218F503F0053F600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83D17E6F218F503F0053F600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83DE3937218FC191002B43AA /* WordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
+		83DE3939218FD6FE002B43AA /* CustomWordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWordListViewController.swift; sourceTree = "<group>"; };
+		83DE393B218FE747002B43AA /* CustomWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWordViewController.swift; sourceTree = "<group>"; };
+		83DE3941219CFCF1002B43AA /* ModeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
+		83DE3945219E4AD0002B43AA /* FlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewController.swift; sourceTree = "<group>"; };
+		83DE3947219F415D002B43AA /* SightWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightWord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +52,7 @@
 		83D17E57218F503E0053F600 = {
 			isa = PBXGroup;
 			children = (
+				83DE3947219F415D002B43AA /* SightWord.swift */,
 				83D17E62218F503E0053F600 /* SightWords */,
 				83D17E61218F503E0053F600 /* Products */,
 			);
@@ -56,6 +71,12 @@
 			children = (
 				83D17E63218F503E0053F600 /* AppDelegate.swift */,
 				83D17E65218F503E0053F600 /* ViewController.swift */,
+				83DE3941219CFCF1002B43AA /* ModeSelectViewController.swift */,
+				83DE3945219E4AD0002B43AA /* FlashcardsViewController.swift */,
+				83A0A529218FAEB000B69148 /* SettingsViewController.swift */,
+				83DE3937218FC191002B43AA /* WordListViewController.swift */,
+				83DE3939218FD6FE002B43AA /* CustomWordListViewController.swift */,
+				83DE393B218FE747002B43AA /* CustomWordViewController.swift */,
 				83D17E67218F503E0053F600 /* Main.storyboard */,
 				83D17E6A218F503F0053F600 /* Assets.xcassets */,
 				83D17E6C218F503F0053F600 /* LaunchScreen.storyboard */,
@@ -135,8 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83DE3948219F415D002B43AA /* SightWord.swift in Sources */,
+				83DE3942219CFCF1002B43AA /* ModeSelectViewController.swift in Sources */,
 				83D17E66218F503E0053F600 /* ViewController.swift in Sources */,
 				83D17E64218F503E0053F600 /* AppDelegate.swift in Sources */,
+				83DE3946219E4AD0002B43AA /* FlashcardsViewController.swift in Sources */,
+				83DE3938218FC191002B43AA /* WordListViewController.swift in Sources */,
+				83DE393C218FE747002B43AA /* CustomWordViewController.swift in Sources */,
+				83A0A52A218FAEB000B69148 /* SettingsViewController.swift in Sources */,
+				83DE393A218FD6FE002B43AA /* CustomWordListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
