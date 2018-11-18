@@ -8,7 +8,11 @@
 
 import UIKit
 
-struct SightWord {
+struct SightWord : Codable{
 	var word : String?
 	var phonetic : String?
+	init(word: String, phonetic:String) {
+		self.word = word
+		self.phonetic = phonetic
+	}
 }
