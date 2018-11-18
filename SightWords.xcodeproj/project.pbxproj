@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		835F1DD121A218BC00783451 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F1DD021A218BC00783451 /* RestKit.framework */; };
 		835F1DD221A218D100783451 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F1DCE21A214FB00783451 /* TextToSpeechV1.framework */; };
+		8393D45A21A22DC000C515E4 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393D45921A22DC000C515E4 /* FlashcardViewController.swift */; };
 		83A0A52A218FAEB000B69148 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A0A529218FAEB000B69148 /* SettingsViewController.swift */; };
 		83D17E64218F503E0053F600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D17E63218F503E0053F600 /* AppDelegate.swift */; };
 		83D17E66218F503E0053F600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D17E65218F503E0053F600 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		835F1DCC21A214CE00783451 /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carthage; sourceTree = "<group>"; };
 		835F1DCE21A214FB00783451 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		835F1DD021A218BC00783451 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
+		8393D45921A22DC000C515E4 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		83A0A529218FAEB000B69148 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		83D17E60218F503E0053F600 /* SightWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D17E63218F503E0053F600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				83D17E63218F503E0053F600 /* AppDelegate.swift */,
 				83D17E65218F503E0053F600 /* ViewController.swift */,
 				83DE3941219CFCF1002B43AA /* ModeSelectViewController.swift */,
+				8393D45921A22DC000C515E4 /* FlashcardViewController.swift */,
 				83A0A529218FAEB000B69148 /* SettingsViewController.swift */,
 				83DE3937218FC191002B43AA /* WordListViewController.swift */,
 				83DE3939218FD6FE002B43AA /* CustomWordListViewController.swift */,
@@ -196,6 +199,7 @@
 			files = (
 				83DE3948219F415D002B43AA /* SightWord.swift in Sources */,
 				83DE3942219CFCF1002B43AA /* ModeSelectViewController.swift in Sources */,
+				8393D45A21A22DC000C515E4 /* FlashcardViewController.swift in Sources */,
 				83D17E66218F503E0053F600 /* ViewController.swift in Sources */,
 				83D17E64218F503E0053F600 /* AppDelegate.swift in Sources */,
 				83DE3938218FC191002B43AA /* WordListViewController.swift in Sources */,
