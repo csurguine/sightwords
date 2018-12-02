@@ -12,8 +12,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	@IBOutlet weak var settingsTableView: UITableView!
 	
-	var settingsData:[String] = ["Word Lists","Word Set Size","Delay Interval"]
+	var settingsData:[String] = ["Word Lists","Word Set Size","Delay Interval (seconds)"]
 	var settingsSegueIdentifiers:[String] = ["wordListsSegue", "wordSetSizeSegue", "delayIntervalSegue"]
+	var timerInterval:String = "0"
+	var wordSetSize:String = "0"
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 		self.title = "Settings"
 		self.navigationController?.navigationBar.prefersLargeTitles = true
 		self.navigationItem.largeTitleDisplayMode = .always
+		load()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		settingsTableView.reloadData()
+	}
     
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return settingsData.count
@@ -39,8 +46,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 		if(cell.textLabel?.text == "Word Lists") {
 			
 		}
-		else {
-		cell.detailTextLabel?.text = "5" // Adds the detail text
+		else if(cell.textLabel?.text == "Delay Interval (seconds)"){
+			cell.detailTextLabel?.text = timerInterval
+		}
+		
+		else if(cell.textLabel?.text == "Word Set Size"){
+			cell.detailTextLabel?.text = wordSetSize
 		}
 		
 		return cell
@@ -50,14 +61,24 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 		self.performSegue(withIdentifier: settingsSegueIdentifiers[indexPath.row], sender: nil)
 	}
 	
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	func load() {
+		if let loadedData = UserDefaults.standard.string(forKey: "timerInterval") {
+			timerInterval = loadedData
+		}
+		if let loadedData = UserDefaults.standard.string(forKey: "wordSetSize") {
+			wordSetSize = loadedData
+		}
+		settingsTableView.reloadData()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "delayIntervalSegue" {
+			let delayIntervalView:DelayIntervalViewController = segue.destination as! DelayIntervalViewController
+			delayIntervalView.masterView = self
+		} else if segue.identifier == "wordSetSizeSegue" {
+			let wordSetSizeView:WordSetSizeViewController = segue.destination as! WordSetSizeViewController
+			wordSetSizeView.masterView = self
+		}
+	}
 
 }

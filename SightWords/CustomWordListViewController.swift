@@ -32,6 +32,47 @@ class CustomWordListViewController:
 		customWordListTableView.dataSource = self
 		customWordListTableView.delegate = self
 		
+		customWordsList = ["a",
+						   "and",
+						   "away",
+						   "big",
+						   "blue",
+						   "can",
+						   "come",
+						   "down",
+						   "find",
+						   "for",
+						   "funny",
+						   "go",
+						   "help",
+						   "here",
+						   "I",
+						   "in",
+						   "is",
+						   "it",
+						   "jump",
+						   "little",
+						   "look",
+						   "make",
+						   "me",
+						   "my",
+						   "not",
+						   "one",
+						   "play",
+						   "red",
+						   "run",
+						   "said",
+						   "see",
+						   "the",
+						   "three",
+						   "to",
+						   "two",
+						   "up",
+						   "we",
+						   "where",
+						   "yellow",
+						   "you"]
+		
 		self.title = "Custom Words"
 		self.navigationController?.navigationBar.prefersLargeTitles = true
 		let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addWord)) // Button to add new notes
@@ -41,7 +82,7 @@ class CustomWordListViewController:
 		/*let baseURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 		fileURL = baseURL.appendingPathComponent("words.txt")*/
 		
-		load()
+		//load()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {

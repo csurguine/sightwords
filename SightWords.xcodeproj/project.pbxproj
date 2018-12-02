@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831B9F7921AB845400DA7F51 /* DelayIntervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B9F7821AB845400DA7F51 /* DelayIntervalViewController.swift */; };
+		831B9F7B21AC4EBF00DA7F51 /* WordSetSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B9F7A21AC4EBF00DA7F51 /* WordSetSizeViewController.swift */; };
 		835F1DD121A218BC00783451 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F1DD021A218BC00783451 /* RestKit.framework */; };
 		835F1DD221A218D100783451 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F1DCE21A214FB00783451 /* TextToSpeechV1.framework */; };
 		8393D45A21A22DC000C515E4 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393D45921A22DC000C515E4 /* FlashcardViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831B9F7821AB845400DA7F51 /* DelayIntervalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayIntervalViewController.swift; sourceTree = "<group>"; };
+		831B9F7A21AC4EBF00DA7F51 /* WordSetSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetSizeViewController.swift; sourceTree = "<group>"; };
 		835F1DCC21A214CE00783451 /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carthage; sourceTree = "<group>"; };
 		835F1DCE21A214FB00783451 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		835F1DD021A218BC00783451 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				83DE3941219CFCF1002B43AA /* ModeSelectViewController.swift */,
 				8393D45921A22DC000C515E4 /* FlashcardViewController.swift */,
 				83A0A529218FAEB000B69148 /* SettingsViewController.swift */,
+				831B9F7821AB845400DA7F51 /* DelayIntervalViewController.swift */,
+				831B9F7A21AC4EBF00DA7F51 /* WordSetSizeViewController.swift */,
 				83DE3937218FC191002B43AA /* WordListViewController.swift */,
 				83DE3939218FD6FE002B43AA /* CustomWordListViewController.swift */,
 				83DE393B218FE747002B43AA /* CustomWordViewController.swift */,
@@ -198,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				83DE3948219F415D002B43AA /* SightWord.swift in Sources */,
+				831B9F7921AB845400DA7F51 /* DelayIntervalViewController.swift in Sources */,
+				831B9F7B21AC4EBF00DA7F51 /* WordSetSizeViewController.swift in Sources */,
 				83DE3942219CFCF1002B43AA /* ModeSelectViewController.swift in Sources */,
 				8393D45A21A22DC000C515E4 /* FlashcardViewController.swift in Sources */,
 				83D17E66218F503E0053F600 /* ViewController.swift in Sources */,
