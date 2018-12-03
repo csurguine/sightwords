@@ -22,6 +22,7 @@ class WordMatchViewController: UIViewController {
 	var textToSpeech: TextToSpeech?
 	var customWordsList:[String] = []
 	var timerInterval:TimeInterval = 0.0
+	var audioPlayer: AVAudioPlayer!
 	var wordSetSize = 0
 	
     override func viewDidLoad() {

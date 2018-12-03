@@ -46,7 +46,7 @@ class FlashcardViewController: UIViewController {
 	
 	@objc func triggerTimer() {
 		//print("Timer fired!")
-		wordSetCounterLabel.text = "Entering triggerTimer" + String(runCount) + "/" + String(wordSetSize)
+		//wordSetCounterLabel.text = "Entering triggerTimer" + String(runCount) + "/" + String(wordSetSize)
 		play(word: sightWordLabel.text!) // Play the sight word
 		timer?.invalidate() // Cancel the timer
 		
