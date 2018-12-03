@@ -14,8 +14,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 	
 	var settingsData:[String] = ["Word Lists","Word Set Size","Delay Interval (seconds)"]
 	var settingsSegueIdentifiers:[String] = ["wordListsSegue", "wordSetSizeSegue", "delayIntervalSegue"]
-	var timerInterval:String = "0"
-	var wordSetSize:String = "0"
+	var timerInterval:Int = 0
+	var wordSetSize:Int = 0
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +47,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 			
 		}
 		else if(cell.textLabel?.text == "Delay Interval (seconds)"){
-			cell.detailTextLabel?.text = timerInterval
+			cell.detailTextLabel?.text = String(timerInterval)
 		}
 		
 		else if(cell.textLabel?.text == "Word Set Size"){
-			cell.detailTextLabel?.text = wordSetSize
+			cell.detailTextLabel?.text = String(wordSetSize)
 		}
 		
 		return cell
@@ -62,12 +62,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 	
 	func load() {
-		if let loadedData = UserDefaults.standard.string(forKey: "timerInterval") {
-			timerInterval = loadedData
-		}
-		if let loadedData = UserDefaults.standard.string(forKey: "wordSetSize") {
-			wordSetSize = loadedData
-		}
+		timerInterval = UserDefaults.standard.integer(forKey: "timerInterval")
+		wordSetSize = UserDefaults.standard.integer(forKey: "wordSetSize")
 		settingsTableView.reloadData()
 	}
 	

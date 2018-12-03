@@ -10,8 +10,8 @@ import UIKit
 
 class WordSetSizeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-	var pickerData: [String] = ["3", "4", "5", "10", "15", "20", "30", "40", "50"]
-	var selectedSize: String!
+	var pickerData: [Int] = [3,4,5,10,15,20,30,40,50]
+	var selectedSize: Int!
 	var masterView:SettingsViewController!
 	
 	@IBOutlet weak var wordSetSizePickerView: UIPickerView!
@@ -23,11 +23,7 @@ class WordSetSizeViewController: UIViewController, UIPickerViewDelegate, UIPicke
 		self.wordSetSizePickerView.dataSource = self
 		
 		// Load the value to be shown in the picker from UserDefaults
-		if let data = UserDefaults.standard.string(forKey: "wordSetSize") {
-			selectedSize = data
-		} else {
-			selectedSize = "3"
-		}
+		selectedSize = UserDefaults.standard.integer(forKey: "wordSetSize")
 		
 		// Select the row in the picker that corresponds to the stored value
 		if let row = pickerData.firstIndex(of: selectedSize!){
@@ -46,7 +42,7 @@ class WordSetSizeViewController: UIViewController, UIPickerViewDelegate, UIPicke
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return pickerData[row]
+		return String(pickerData[row])
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

@@ -151,12 +151,6 @@ class CustomWordListViewController:
 		addWord()
 	}
 	
-
-	
-	/*override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated);
-		self.navigationController?.setToolbarHidden(true, animated: animated)
-	}*/
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let customWordView:CustomWordViewController = segue.destination as! CustomWordViewController

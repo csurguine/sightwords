@@ -15,11 +15,13 @@ class FlashcardViewController: UIViewController {
 	@IBOutlet weak var helpButton: UIButton!
 	@IBOutlet weak var sightWordLabel: UILabel!
 	@IBOutlet weak var nextButton: UIButton!
+	@IBOutlet weak var wordSetCounterLabel: UILabel!
 	
 	var customWordsList:[String] = []
 	var audioPlayer: AVAudioPlayer!
 	var timer: Timer?
 	var timerInterval:TimeInterval = 0.0
+	var wordSetSize = 0
 	var runCount = 0
 	var username = "77fea422-c8da-45ab-a4bb-bc1f76487d71"
 	var password = "ZCRcXAbIGEtq"
@@ -34,10 +36,31 @@ class FlashcardViewController: UIViewController {
     }
 	
 	func resetLabel() {
+		runCount = runCount + 1
+		wordSetCounterLabel.text = "Entering resetLabel" + String(runCount) + "/" + String(wordSetSize)
+		nextButton.isHidden = true // When we change the sight word, hide the next button
 		sightWordLabel.text = customWordsList.randomElement()
-		nextButton.isHidden = true
 		play(word: flashcardLabel.text!) // Ask the user what word this is
 		Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(triggerTimer), userInfo: nil, repeats: false) // Start a timer to play the word
+	}
+	
+	@objc func triggerTimer() {
+		//print("Timer fired!")
+		wordSetCounterLabel.text = "Entering triggerTimer" + String(runCount) + "/" + String(wordSetSize)
+		play(word: sightWordLabel.text!) // Play the sight word
+		timer?.invalidate() // Cancel the timer
+		
+		// If we've reached the end of the flashcards, let the user know
+		if(runCount + 1 > wordSetSize) {
+			nextButton.isHidden = true
+			flashcardLabel.text = "Congrats! You've completed the word set"
+			sightWordLabel.text = ""
+		} else {
+			nextButton.isHidden = false
+		}
+		// When the timer's up, unhide the next button
+		//timerLabel.text? = "Times up!"
+		//viewDidLoad()
 	}
 
 	@IBAction func helpButtonTouched(_ sender: Any) {
@@ -69,19 +92,10 @@ class FlashcardViewController: UIViewController {
 		if let loadedData = UserDefaults.standard.value(forKey: "words") as? [String] {
 			customWordsList = loadedData
 		}
-		if let loadedData = UserDefaults.standard.string(forKey: "timerInterval") {
-			timerInterval = TimeInterval(loadedData)!
-			//timerLabel.text? = timerInterval.description
-		}
+		timerInterval = TimeInterval(UserDefaults.standard.integer(forKey: "timerInterval"))
+		wordSetSize = UserDefaults.standard.integer(forKey: "wordSetSize")
 	}
 	
-	@objc func triggerTimer() {
-		//print("Timer fired!")
-		play(word: sightWordLabel.text!) // Play the sight word
-		timer?.invalidate() // Cancel the timer
-		nextButton.isHidden = false
-		//timerLabel.text? = "Times up!"
-		//viewDidLoad()
-	}
+
 
 }

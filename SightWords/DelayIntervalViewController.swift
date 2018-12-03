@@ -10,8 +10,8 @@ import UIKit
 
 class DelayIntervalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 	
-	var pickerData: [String] = ["1", "2", "3", "4", "5", "10", "20"]
-	var selectedInterval: String!
+	var pickerData: [Int] = [1, 2, 3, 4, 5, 10, 20]
+	var selectedInterval: Int!
 	var masterView:SettingsViewController!
 	
 	@IBOutlet weak var delayIntervalPickerView: UIPickerView!
@@ -23,11 +23,7 @@ class DelayIntervalViewController: UIViewController, UIPickerViewDelegate, UIPic
 		self.delayIntervalPickerView.dataSource = self
 		
 		// Load the value to be shown in the picker from UserDefaults
-		if let data = UserDefaults.standard.string(forKey: "timerInterval") {
-			selectedInterval = data
-		} else {
-			selectedInterval = "1"
-		}
+		selectedInterval = UserDefaults.standard.integer(forKey: "timerInterval")
 		
 		// Select the row in the picker that corresponds to the stored value
 		if let row = pickerData.firstIndex(of: selectedInterval!){
@@ -47,7 +43,7 @@ class DelayIntervalViewController: UIViewController, UIPickerViewDelegate, UIPic
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return pickerData[row]
+		return String(pickerData[row])
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -57,7 +53,7 @@ class DelayIntervalViewController: UIViewController, UIPickerViewDelegate, UIPic
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		masterView.timerInterval = selectedInterval!
+		masterView.timerInterval = selectedInterval
 	}
 
 }
