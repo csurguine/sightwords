@@ -12,10 +12,10 @@ import AVFoundation
 
 class FlashcardViewController: UIViewController {
 	@IBOutlet weak var flashcardLabel: UILabel!
-	@IBOutlet weak var helpButton: UIButton!
 	@IBOutlet weak var sightWordLabel: UILabel!
 	@IBOutlet weak var nextButton: UIButton!
 	@IBOutlet weak var wordSetCounterLabel: UILabel!
+	@IBOutlet weak var helpButton: UIButton!
 	
 	var customWordsList:[String] = []
 	var audioPlayer: AVAudioPlayer!
@@ -37,7 +37,7 @@ class FlashcardViewController: UIViewController {
 	
 	func resetLabel() {
 		runCount = runCount + 1
-		wordSetCounterLabel.text = "Entering resetLabel" + String(runCount) + "/" + String(wordSetSize)
+		//wordSetCounterLabel.text = "Entering resetLabel" + String(runCount) + "/" + String(wordSetSize)
 		nextButton.isHidden = true // When we change the sight word, hide the next button
 		sightWordLabel.text = customWordsList.randomElement()
 		play(word: flashcardLabel.text!) // Ask the user what word this is
@@ -45,8 +45,6 @@ class FlashcardViewController: UIViewController {
 	}
 	
 	@objc func triggerTimer() {
-		//print("Timer fired!")
-		//wordSetCounterLabel.text = "Entering triggerTimer" + String(runCount) + "/" + String(wordSetSize)
 		play(word: sightWordLabel.text!) // Play the sight word
 		timer?.invalidate() // Cancel the timer
 		
@@ -63,24 +61,25 @@ class FlashcardViewController: UIViewController {
 		//viewDidLoad()
 	}
 
+	
 	@IBAction func helpButtonTouched(_ sender: Any) {
 		play(word: sightWordLabel.text!)
 	}
-	
 	
 	@IBAction func nextButtonTouched(_ sender: Any) {
 		resetLabel()
 	}
 	
 	func play (word:String) {
-		/*let username = "77fea422-c8da-45ab-a4bb-bc1f76487d71"
-		let password = "ZCRcXAbIGEtq"
-		let textToSpeech = TextToSpeech(username: username, password: password)
-		*/
-		
 		let text = word
 		let accept = "audio/wav"
 		let failure = { (error: Error) in print(error)}
+		/*textToSpeech?.getPronunciation(text: text, voice: "en-USMichaelVoice", format: "ipa", failure: failure) { data in
+			self.audioPlayer = try! AVAudioPlayer(data: data)
+			self.audioPlayer.prepareToPlay()
+			self.audioPlayer.play()
+			
+		}*/
 		textToSpeech!.synthesize(text: text, accept: accept, failure: failure) { data in
 			self.audioPlayer = try! AVAudioPlayer(data: data)
 			self.audioPlayer.prepareToPlay()
